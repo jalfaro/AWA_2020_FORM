@@ -1,1 +1,24 @@
-<p>formulario works!</p>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" id="tabla_datos">
+  <!-- Nombre-->
+  <ng-container matColumnDef="nombre">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+  </ng-container>
+
+  <!-- Fecha Nacimeinto -->
+  <ng-container matColumnDef="fecha_nacimiento">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.fecha_nacimiento}} </td>
+  </ng-container>
+
+  <!-- Sexo -->
+  <ng-container matColumnDef="sexo">
+    <th mat-header-cell *matHeaderCellDef> Weight </th>
+    <td mat-cell *matCellDef="let element"> {{element.sexo}} </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
